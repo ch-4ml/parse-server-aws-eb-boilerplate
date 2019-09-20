@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IDOL </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css">
+</head>
+
+<body>
+  <div class="body">
+    <div class="header">
+      <div class="header-contents">
+        <a href="../pages/index.html" class="logo col-s-6">
+          <h1>IDOL POP</h1>
+        </a>
+        <a href="javascript:void(0);" class="icon col-s-6" onclick="hamburgBarToggle()">
+          <img src="../../images/ic-menu.svg" class="ic_menu">
+        </a>
+        <nav id="headerNav" class="topnav">
+          <button class="close-button" onclick="hamburgBarToggle()">
+            <img src="../../images/ic-leave.svg">
+          </button>
+          <div class="nav-items">
+            <a href="#" class="active Header-Text">HOME</a>
+            <a href="#" class="Header-Text">MyIdol</a>
+            <a href="#" class="Header-Text user-container"></a>
+            <a href="../pages/login.html" class="login-container">Login</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="full-width-contents">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFALmRwu5UbpkPOiz5WU-h4wv7Y_pvS5T8n3GyU9_PQOWRUkTY" width="80%">
+        </div>
+
+    <div class="contents" id="login-body">
+      <div class="contents-container">
+        <div class="login-form-container col-6 col-s-12">
+          <div class="Title-Text">SignUp</div>
+          <div class="icinputs-container">
+            Username: <input type="text" id="input-username" placeholder="username"
+              class="Text-Input input-text input-text-email" />
+            <div class="input-help-container">
+              Password: <input type="password" id="input-password" placeholder="Password"
+                class="Text-Input input-text input-text-password" />
+            </div>
+          </div>
+
+          <button onclick="signUp()" class="submit Button-Text">
+            SignUp
+          </button>
+
+          <br />
+          <a  href="../pages/login.html">
+            Already have account.
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="contents">
+        <div class="bottom-container">
+          <div class="term">
+            <div class="link-container Tab-Selected">
+              <a>IDOL POP</a>
+            </div>
+            <a>jeffgukang@gmail.com</a>
+            <div class="row-container">
+              <a>Term of Service</a>&nbsp | &nbsp<a>Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function hamburgBarToggle() {
+    var x = document.getElementById("headerNav");
+    if (x.className === "topnav") {
+      x.className += " re sponsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+<script src="../js/parse.min.js"></script>
+<script src="../js/parseApis.js"></script>
+<script src='../js/header.js'></script>
+<script>
+  async function signUp() {
+    const username = document.getElementById('input-username').value;
+    const password = document.getElementById('input-password').value;
+    console.log(username, password);
+
+    try {
+      const response = await ParseApi.signUp(username, password);
+      if (response.error) {
+        alert(response.error);
+      } else {
+        console.log(response);
+        alert(`Welcome, ${response.username} \n SignUp Finished`);
+        location.href = '../pages/login.html';
+      }
+    } catch(error) {
+      alert(error);
+    }
+  }
+</script>
+
+</html>

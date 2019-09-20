@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <button onclick="hello()">SayHello</button>
+        <div class="signUp">
+            <input id="input-username" type="text" placeholder="username">
+            <input id="input-password" type="password" placeholder="password">
+            <button onclick="getItemList()">GetItemList</button>
+            <button onclick="signUp()">SignUp</button>
+            <button onclick="signIn()">SignIn</button>
+            <button onclick="logout()">LogOut</button>
+        </div>
+    </body>
+    <script src="../js/parse.min.js"></script>
+    <script src="../js/parseApis.js"></script>  
+    <script>
+        async function hello() {
+            const result = await ParseApi.sayHello();
+            console.log(result);
+        }
+
+        async function getItemList() {
+            const result = await ParseApi.getItemList();
+            console.log(result);
+        }
+
+        async function signUp() {
+            const username = document.getElementById('input-username').value;
+            const password = document.getElementById('input-password').value;
+            console.log(username, password);
+
+            const result = await ParseApi.signUp(username, password);
+            console.log(result);
+        }
+
+        async function signIn() {
+            const username = document.getElementById('input-username').value;
+            const password = document.getElementById('input-password').value;
+            console.log(username, password);
+
+            const result = await ParseApi.signIn(username, password);
+            console.log(result);
+            console.log(result.sessionToken);
+            localStorage.setItem('session', result.sessionToken);
+        }
+
+        async function logout() {
+            const result = await ParseApi.logout();
+            console.log(result);
+            localStorage.removeItem('session');
+        }
+    </script>
+<html>

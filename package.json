@@ -9,7 +9,7 @@
     "start:local": "NODE_ENV=local node index",
     "test": "jest",
     "dashboard": "parse-dashboard --config parse-dashboard-config.json",
-    "dashboard:local": "parse-dashboard --config parse-dashboard-config-local.json"
+    "dashboard:local": "parse-dashboard --config parse-dashboard-config-local.json --allowInsecureHTTP"
   },
   "author": "",
   "license": "ISC",

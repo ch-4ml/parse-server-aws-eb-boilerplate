@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IDOLPOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/default.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./header-footer.css">
+  </head>
+  
+  <body>
+    <div class="body">
+  
+      <div class="header">
+        <div class="header-contents">
+          <a href="../pages/index.html" class="logo col-s-6">
+            <h1>IDOL POP</h1>
+          </a>
+          <a href="javascript:void(0);" class="icon col-s-6" onclick="hamburgBarToggle()">
+            <img src="../images/ic-menu.svg" class="ic_menu">
+          </a>
+          <nav id="headerNav" class="topnav">
+            <button class="close-button" onclick="hamburgBarToggle()">
+              <img src="../images/ic-leave.svg">
+            </button>
+            <div class="nav-items">
+              <a href="#" class="active Header-Text">HOME</a>
+              <a href="#" class="Header-Text">MyIdol</a>
+            </div>
+            <a href="../pages/login.html" class="login-container">
+              Login
+            </a>
+          </nav>
+        </div>
+      </div>
+  
+      <div class="footer">
+        <div class="contents">
+          <div class="bottom-container">
+            <div class="term">
+              <div class="link-container Tab-Selected">
+                <a>IDOL POP</a>
+              </div>
+              <a>jeffgukang@gmail.com</a>
+              <div class="row-container">
+                <a>Term of Service</a>&nbsp | &nbsp<a>Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  </body>
+  
+  <script>
+    function hamburgBarToggle() {
+      var x = document.getElementById("headerNav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>

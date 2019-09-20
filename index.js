@@ -51,7 +51,7 @@ app.use('/', express.static(path.join(__dirname, '/public')))
   const config = {
     "apps": [
       {
-        "serverURL": nconf.get('dashboard-serverURL'),
+        "serverURL": "http://ch-4ml.iptime.org:1337/parse",
         "appId": nconf.get('appId'),
         "masterKey": nconf.get('masterKey'),
         "appName": nconf.get('appname'),

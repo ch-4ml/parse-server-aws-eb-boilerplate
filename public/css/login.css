@@ -1,0 +1,70 @@
+@import url(./default.css);
+@import url(../css/header-footer.css);
+
+#login-body {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+  font-family: aritadm;
+}
+
+.contents-container {
+  max-width: var(--contents-max-width);
+  width: 100%;
+  min-height: 900px;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  margin-top: 71px;
+}
+
+.login-form-container .ic_header_logo {
+  min-width: 130px;
+  align-self: flex-start;
+}
+
+.login-form-container .title-text {
+  font-family: aritadsb;
+  margin-top: 35px;
+}
+
+.img-background {
+  background: pink;
+  background: url(../images/photo.png) no-repeat top left;
+  background-size: cover;
+}
+
+.icinputs-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.icinputs-container > * {
+  margin-top: 26px;
+}
+
+.login-form-container button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--tab-button);
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+
+.login-form-container button.submit {
+  margin-top: 34px;
+}
